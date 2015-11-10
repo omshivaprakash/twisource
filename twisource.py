@@ -33,7 +33,8 @@ def lint(message, date, account):
 
 def getRTid(message):
     m = re.match("^RT ([0-9]*)$", message)
-    if m is not None: return m.groups()[0]
+    if m:
+        return m.groups()[0]
 
 
 def cred(account):
