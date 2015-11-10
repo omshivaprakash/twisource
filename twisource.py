@@ -14,7 +14,6 @@ try:
     import json
 except ImportError:
     import simplejson as json
-from collections import defaultdict
 
 tz = 'Europe/Moscow'
 tweet_file = 'tweets.yml'
