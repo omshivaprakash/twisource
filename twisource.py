@@ -18,6 +18,7 @@ except ImportError:
 tz = 'Europe/Moscow'
 tweet_file = 'tweets.yml'
 
+
 def shorten(url):
     headers = {'content-type': 'application/json'}
     payload = {"longUrl": url}
@@ -25,6 +26,7 @@ def shorten(url):
     r = requests.post(url, data=json.dumps(payload), headers=headers)
     link = json.loads(r.text)['id']
     return link
+
 
 def lint(message, date, account):
     if len(message) > 140:
@@ -38,20 +40,24 @@ def lint(message, date, account):
         return 1
     return 0
 
+
 def shorten(url):
     import urllib2
     fetcher = urllib2.urlopen('https://clck.ru/--?url='+ url)
     return fetcher.read()
 
+
 def getRTid(message):
     m = re.match("^RT ([0-9]*)$", message)
     if m is not None: return m.groups()[0]
+
 
 def cred(account):
     f = "settings-" + account + ".json"
     settings = open(f).read()
     credentials = json.loads(settings)
     return credentials
+
 
 def tweeter(message, account, mode):
     credentials = cred(account)
@@ -73,6 +79,7 @@ def tweeter(message, account, mode):
                     print "[DEBUG] Retweeting a message", rt_id
                     api.retweet(rt_id)
                     print "[DEBUG] Posted"
+
 
 def main(mode):
     with open(tweet_file, 'r') as f:
