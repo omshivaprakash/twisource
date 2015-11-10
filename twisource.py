@@ -76,7 +76,6 @@ def main(mode):
             tweeter(t['text'], t['account'], mode)
             if t['date'] == d.strftime("%Y-%m-%d %H:%M") and not lint(t['text'], t['date'], t['account']) and mode:
                 tweeter(t['text'], t['account'], mode)
-                f.close
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Post Twitter messages from file.')
