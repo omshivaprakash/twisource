@@ -19,15 +19,6 @@ tz = 'Europe/Moscow'
 tweet_file = 'tweets.yml'
 
 
-def shorten(url):
-    headers = {'content-type': 'application/json'}
-    payload = {"longUrl": url}
-    url = "https://www.googleapis.com/urlshortener/v1/url"
-    r = requests.post(url, data=json.dumps(payload), headers=headers)
-    link = json.loads(r.text)['id']
-    return link
-
-
 def lint(message, date, account):
     if len(message) > 140:
         print "[DEBUG] The text of your tweet scheduled at", date, "is too long"
@@ -39,12 +30,6 @@ def lint(message, date, account):
         print "[DEBUG] File with credentials is not accessible"
         return 1
     return 0
-
-
-def shorten(url):
-    import urllib2
-    fetcher = urllib2.urlopen('https://clck.ru/--?url='+ url)
-    return fetcher.read()
 
 
 def getRTid(message):
