@@ -87,4 +87,4 @@ if __name__ == '__main__':
     else:
         print "[DEBUG] lint mode enabled"
 
-    main(mode = args.publish)
+    main(mode=args.publish)
