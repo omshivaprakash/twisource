@@ -39,9 +39,8 @@ def getRTid(message):
 
 def cred(account):
     f = "settings-" + account + ".json"
-    settings = open(f).read()
-    credentials = json.loads(settings)
-    return credentials
+    with open(f) as fp:
+        return json.load(fp)
 
 
 def tweeter(message, account, mode):
