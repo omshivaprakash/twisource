@@ -5,7 +5,6 @@
 import argparse
 import os
 import re
-import requests
 import tweepy
 from pytz import timezone
 import datetime
