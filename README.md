@@ -44,7 +44,8 @@ Has to be done once.
 
 ## Users
 
-- [OpenVZ, CRIU, P.Haul](https://github.com/ligurio/openvz-smm)
+- [OpenVZ, CRIU, P.Haul](https://www.openvz.org)
+- ...
 
 ## Similar tools
 
