@@ -14,7 +14,7 @@ try:
 except ImportError:
     import simplejson as json
 
-tz = 'Europe/Moscow'
+tz = 'Asia/Kolkata'
 tweet_file = 'tweets.yml'
 
 
